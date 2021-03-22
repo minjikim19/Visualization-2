@@ -72,7 +72,7 @@ var g = d3
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
 d3.csv("data/dataset.csv").then(function(data) {
-    console.log(data);
+    //console.log(data);
     const hierarchy = buildHierarchy(data);
     partition = d3.partition().size([2 * Math.PI, radius]);
     root = d3.hierarchy(hierarchy).sum(function(d) {
@@ -116,7 +116,7 @@ d3.csv("data/dataset.csv").then(function(data) {
                 return d.depth === 4 ? color[d.data.Platform] : color[d.data.name];
         })
         .on("mouseover", (d, i) => {
-            console.log("here");
+            //console.log("here");
             // tooltip.style("opacity", 1);
             // tooltip.style("color", "#000");
             const[x, y] = [d.screenX, d.screenY];
@@ -217,6 +217,6 @@ function buildHierarchy(csv) {
             }
         }
     }
-    console.log(root);
+    //console.log(root);
     return root;
 }
